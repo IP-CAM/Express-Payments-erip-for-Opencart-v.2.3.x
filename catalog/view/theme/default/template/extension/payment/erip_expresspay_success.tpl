@@ -28,7 +28,7 @@
           });
 
           function send_notify(type, signature) {
-            $.post('<?php echo HTTPS_SERVER . "index.php?route=payment/erip_expresspay/notify" ?>', 'Data={"CmdType": ' + type + ', "AccountNo": <?php echo $order_id; ?>}&Signature=' + signature, function(data) {alert(data);})
+            $.post('<?php echo HTTPS_SERVER . "index.php?route=extension/payment/erip_expresspay/notify" ?>', 'Data={"CmdType": ' + type + ', "AccountNo": <?php echo $order_id; ?>}&Signature=' + signature, function(data) {alert(data);})
             .fail(function(data) {
               alert(data.responseText);
             });
